@@ -1,8 +1,13 @@
 var katzDeliline = []
 
+katzDeliline = [{name : "andrew", time : "4:50"}]
+
 
 function takeANumber(array, name){
-  array.push(name)
+  var customer = {}
+  customer['name'] = name
+  customer['time'] = Date.now()
+  array.push(customer)
   return `Welcome, ${name}. You are number ${array.length} in line.`
 }
 
@@ -11,12 +16,9 @@ function nowServing(array){
   if (array.length === 0){
     return "There is nobody waiting to be served!"
   } else{
-    var temp = array[0]
-    array.shift()
-    return `Currently serving ${temp}.`
+    return `Currently serving ${array.length}.`
   }
-}
-
+} 
 
 
 function currentLine(array){
@@ -32,6 +34,6 @@ function currentLine(array){
         result += `${i+1}. ${array[i]}, `
       }
     }
-   return result 
+   return result
   }
 }
